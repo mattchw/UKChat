@@ -6,7 +6,7 @@ import {
   useParams,
 } from "react-router-dom";
 
-import { RiArrowLeftSLine } from 'react-icons/ri';
+import { RiArrowLeftSLine, RiSendPlane2Fill } from 'react-icons/ri';
 
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
@@ -79,9 +79,9 @@ function ChatRoom(props) {
         })}
       </div>
       <div className="chat-footer">
-        <form onSubmit={sendMessage}>
-          <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Message..." />
-
+        <form onSubmit={sendMessage} style={{display: 'flex'}}>
+          <input style={{margin: '0 1vh 0 0'}} value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Message..." />
+          <button className="send-button" type="submit" disabled={!formValue}><RiSendPlane2Fill size={'3vh'}/></button>
         </form>
       </div>
     </div>

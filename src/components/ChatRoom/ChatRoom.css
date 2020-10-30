@@ -18,7 +18,7 @@
 .chat-body {
   display: flex;
   padding: 10px;
-  height: 90vh;
+  height: 87vh;
   overflow-y: scroll;
   flex-direction: column-reverse;
   /* flex-direction: column; */
@@ -35,7 +35,7 @@
 .chat-footer {
   display: flex;
   /* flex: 1; */
-  min-height: 5vh;
-  max-height: 5vh;
+  min-height: 8vh;
+  max-height: 8vh;
   background-color: #424242;
 }

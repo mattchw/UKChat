@@ -135,6 +135,7 @@ input {
   border: none;
   padding: 0 10px;
   border-radius:10px;
+  height: 5vh;
 }
 
 .sign-in {
@@ -161,6 +162,7 @@ p {
 }
 .date {
   text-align: -webkit-center;
+  padding-bottom: 10px;
 }
 .date p{
   color: white;
@@ -217,4 +219,17 @@ img {
     display: inline;
     cursor: pointer;
     color: #fff;
+}
+
+.send-button {
+  padding: 1vh;
+  border-radius: 10px;
+  color: white;
+  background: #37698e;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
 }
