@@ -171,6 +171,7 @@ p {
 .message {
   display: flex;
   align-items: flex-end;
+  flex-shrink: 0;
 }
 
 
