@@ -14,7 +14,6 @@ import ChatMessage from '../ChatMessage/ChatMessage';
 
 function ChatRoom(props) {
   let { id } = useParams();
-  const start = useRef();
   const end = useRef();
   const messagesRef = firebase.firestore().collection(`channels/${id}/messages`);
   const query = messagesRef.orderBy('createdAt', 'desc');
@@ -39,9 +38,11 @@ function ChatRoom(props) {
     if (formValue !== '') {
       const { uid, displayName, photoURL } = firebase.auth().currentUser;
 
+      const time = await firebase.firestore.FieldValue.serverTimestamp();
+
       await messagesRef.add({
         text: formValue,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        createdAt: time,
         uid,
         displayName,
         photoURL
@@ -67,16 +68,15 @@ function ChatRoom(props) {
         
         {messages && messages.map((msg, index) => {
           const next = messages[index + 1];
+          
           return(<React.Fragment key={msg.id}>
             <ChatMessage message={msg} />
-            {msg.createdAt && shouldShowDay(next, msg) && (<div className="date">
+            {msg && msg.createdAt && shouldShowDay(next, msg) && (<div className="date">
               <p>{new Date(msg.createdAt.seconds * 1000).toLocaleDateString()}</p>
             </div>
             )}
             </React.Fragment>)
         })}
-
-        <span ref={start} className="start"></span>
       </div>
       <div className="chat-footer">
         <form onSubmit={sendMessage}>
