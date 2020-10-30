@@ -69,7 +69,7 @@ function ChatRoom(props) {
           const next = messages[index + 1];
           return(<React.Fragment key={msg.id}>
             <ChatMessage message={msg} />
-            {shouldShowDay(next, msg) && (<div className="date">
+            {shouldShowDay(next, msg) && msg.createdAt && (<div className="date">
               <p>{new Date(msg.createdAt.seconds * 1000).toLocaleDateString()}</p>
             </div>
             )}
