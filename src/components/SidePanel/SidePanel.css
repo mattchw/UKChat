@@ -1,0 +1,25 @@
+.Nav {
+  color: #fff;
+  width: 200px;
+  flex-direction: column;
+}
+
+.side-panel-close-btn {
+  display: flex;
+  margin: 'auto 0';
+  padding: 10px;
+}
+
+.User {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.ChannelNav a{
+  font-size: 90%;
+  padding: 8px 20px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
