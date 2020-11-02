@@ -80,7 +80,7 @@ function ChatRoom(props) {
       </div>
       <div className="chat-footer">
         <form onSubmit={sendMessage} style={{display: 'flex'}}>
-          <input style={{margin: '0 1vh 0 0'}} value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Message..." />
+          <input style={{margin: 'auto 1vh auto 0px'}} value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Message..." />
           <button className="send-button" type="submit" disabled={!formValue}><RiSendPlane2Fill size={'3vh'}/></button>
         </form>
       </div>

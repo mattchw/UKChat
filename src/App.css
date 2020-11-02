@@ -222,7 +222,7 @@ img {
 }
 
 .send-button {
-  padding: 1vh;
+  padding: 0 10px;
   border-radius: 10px;
   color: white;
   background: #37698e;
